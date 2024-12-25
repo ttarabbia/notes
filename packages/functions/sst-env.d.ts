@@ -14,6 +14,19 @@ declare module "sst" {
       "name": string
       "type": "sst.aws.Dynamo"
     }
+    "NotesIdentityPool": {
+      "id": string
+      "type": "sst.aws.CognitoIdentityPool"
+    }
+    "NotesUserPool": {
+      "id": string
+      "type": "sst.aws.CognitoUserPool"
+    }
+    "NotesUserPoolClient": {
+      "id": string
+      "secret": string
+      "type": "sst.aws.CognitoUserPoolClient"
+    }
     "Uploads": {
       "name": string
       "type": "sst.aws.Bucket"

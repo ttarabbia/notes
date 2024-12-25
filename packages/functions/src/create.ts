@@ -1,7 +1,6 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, PutCommand } from "@aws-sdk/lib-dynamodb"
 import * as uuid from "uuid";
-import { APIGatewayProxyEvent } from 'aws-lambda';
 import { Util } from "@notes/core/util"
 import { Resource } from 'sst';
 
@@ -20,7 +19,7 @@ export const main = Util.handler(async (event) => {
   const params = {
     TableName: Resource.Notes.name,
     Item: {
-      userId: "123",
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId,
       noteId: uuid.v1(),
       content: data.content,
       attachment: data.attachment,
