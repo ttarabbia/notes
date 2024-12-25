@@ -27,6 +27,10 @@ declare module "sst" {
       "secret": string
       "type": "sst.aws.CognitoUserPoolClient"
     }
+    "StripeSecretKey": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
     "Uploads": {
       "name": string
       "type": "sst.aws.Bucket"

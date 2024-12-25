@@ -14,11 +14,11 @@ export default $config({
     const auth = await import("./infra/auth");
 
     return {
-      api: api.api.url,
-      UserPool: auth.userPool.id,
-      Region: aws.getRegionOutput().name,
       IdentityPool: auth.identityPool.id,
-      UserPoolClient: auth.userPoolClient.id
+      UserPoolClient: auth.userPoolClient.id,
+      UserPool: auth.userPool.id,
+      api: api.api.url,
+      Region: aws.getRegionOutput().name
     };
   },
 });
