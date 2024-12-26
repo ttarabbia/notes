@@ -19,7 +19,9 @@ export module Util {
 
       return {
         body,
-        statusCode
+        statusCode,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true,
       }
     }
   }
