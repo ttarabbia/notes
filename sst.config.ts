@@ -12,6 +12,7 @@ export default $config({
     await import("./infra/storage");
     const api = await import("./infra/api");
     const auth = await import("./infra/auth");
+    await import("./infra/web");
 
     return {
       IdentityPool: auth.identityPool.id,
