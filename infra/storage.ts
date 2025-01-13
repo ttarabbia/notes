@@ -1,6 +1,8 @@
 export const bucket = new sst.aws.Bucket("Uploads", {
   cors: {
-    allowMethods: ["GET"]
+    allowMethods: ["GET", "PUT"],
+    allowOrigins: ["*"]
+
   }
 });
 
